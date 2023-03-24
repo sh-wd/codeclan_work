@@ -1,0 +1,33 @@
+ls / ls
+list everything in current directory
+
+pwd
+print working directory
+
+cd
+change directory
+
+cd ..
+change directory up
+
+mkdir
+make a folder
+
+touch
+create a file
+
+rm
+remove
+
+rm -r
+remove a folder
+
+rm -fr
+Nuke from orbit.
+
+man
+manual pages
+
+history
+show the most recent 200 commands
+
