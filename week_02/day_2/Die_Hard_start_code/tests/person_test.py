@@ -16,8 +16,14 @@ class TestPerson(unittest.TestCase):
         
     # Extension
     # Write a test to check if Holly is using her maiden name again.
+
+    def test_maiden_name(self):
+        self.assertEqual("Holly Gennero", self.holly.name)
     
     # Extension
     # Write a check to check Hans Gruber hasn't killed anyone yet.
+
+    def test_hans_kill_count(self):
+        self.assertEqual(0, self.badguy1.no_of_kills)
         
     

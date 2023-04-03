@@ -3,3 +3,7 @@ class Floor:
         self.people = []
         self.floor_number = floor_number
 
+
+    def floor_count(self):
+        return len(self.people)
+
