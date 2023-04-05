@@ -1,0 +1,51 @@
+html, body, #grid-container {
+    height: 100%;
+}
+
+body {
+    font-family: monospace, Arial, sans-serif;
+    margin: 0;
+    background-color: blue;
+
+}
+
+#grid-container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "order order order"
+        "order order order";
+    grid-template-rows: 2fr 5fr;
+}
+
+header {
+    grid-area: header;
+    background-color: yellow;
+    color: black;
+}
+
+header > h1 {
+    padding: 10px;
+    margin: 0;
+}
+
+main {
+    grid-area: order;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 10px;
+}
+
+.order {
+    grid-area: order;
+    background-color: white;
+    margin: 5px;
+    padding: 10px;
+    width: 25%;
+    border-radius: 10px;
+}
+
+p {
+    line-height: 1rem;
+}

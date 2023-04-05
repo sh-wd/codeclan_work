@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>{{title}} - Book Store for Dummies</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+            <header>
+                <h1>Customer orders:</h1>
+            </header>
+            <main>
+                {% for order in orders: %}
+                <div class="order">
+                    <p>Cusomer name : {{order.customer_name}}</p>
+                    <p>Order date : {{order.order_date}}</p>
+                    <p>Quantity : {{order.quantity}}</p>
+                    <p>Book title : {{order.title}}</p>
+                    <p>Author : {{order.author}}</p>
+                    <p>Price : {{order.price}}</p>
+                    <a href="{{ url_for('single_order', id=order.id) }}">View Order</a>
+                </div>
+                {% endfor %}
+            </main>
+            <footer>
+            </footer>
+        </div>
+    </body>
+</html>
