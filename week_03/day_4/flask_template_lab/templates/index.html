@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+</head>
+<body>
+    <header>
+        <h1>Event Planner</h1>
+
+        <form action="/events" method="POST">
+            <label for="date">Date :</label>
+            <input type="date" name="date" id="date">
+            <br>
+            <label for="name">Event name :</label>
+            <input type="text" name="name" id="name">
+            <br>
+            <label for="guests">No. of guests :</label>
+            <input type="text" name="guests" id="guests">
+            <br>
+            <label for="room_location">Room location :</label>
+            <input type="text" name="room_location" id="room_location">
+            <br>
+            <label for="description">Description :</label>
+            <input type="text" name="description" id="description">
+            <br>
+            <p>Does this event recur?</p>
+            <input type="radio" name="recurring" value="yes" id="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" name="recurring" value="no" id="no" checked>
+            <label for="no">No</label>
+            <br>
+            <input type="submit" value="Add Event">
+        </form>
+
+        {% for event in events_list %}
+        <p>
+            {{ event.date }} {{ event.event_name }} {{ event.guests }} {{ event.room_location }} {{ event.description }} {{event.recurring}}
+        
+        {% if event.recurring%}
+            <span> &#9989;</span>
+        {% else %}
+            <span> &#10060;</span>
+        {% endif %}
+        </p>
+
+        {% endfor %}
+
+       
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
