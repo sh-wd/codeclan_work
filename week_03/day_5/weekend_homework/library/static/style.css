@@ -1,0 +1,77 @@
+html, body{
+    margin: 0;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-areas: 
+        'header header'
+        'main side'
+        'footer footer';
+}
+
+body {
+    font-family: monospace, helvetica, sans-serif 
+}
+
+header {
+    font-weight: 900;
+    background-color: teal;
+    color: whitesmoke;
+    padding: 20px;
+    grid-area: header;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10px;
+    grid-area: main;
+}
+
+.book-panel {
+    width: 20%;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px lightgray;
+    display: flex;
+    flex-direction: column;
+    background-color: olivedrab;
+    color: whitesmoke;
+}
+
+.book-panel:hover {
+    box-shadow: 10px 10px darkgrey;
+}
+
+.book-panel > p> a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+.book-panel > p> a:hover {
+    text-decoration: underline;
+}
+
+#remove-button {
+    background-color: whitesmoke;
+    color: olivedrab;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    width: 50%;
+    padding: 5px;
+}
+
+#remove-button:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+#add-book-form {
+    grid-area: side;
+}
+
+footer {
+    grid-area: footer;
+}

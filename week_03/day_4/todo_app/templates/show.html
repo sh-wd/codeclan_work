@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>
+        {{ task.title }}: {{ task.description }}
+        {% if task.done %}
+            <span> &#9989; </span>
+        {% else %}
+            <span> &#10060; </span>
+        {% endif %}
+    </p>
+{% endblock %}

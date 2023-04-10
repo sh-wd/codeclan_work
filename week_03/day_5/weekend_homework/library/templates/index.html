@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    {% for book in book_list %}
+        <div class="book-panel"> 
+            <p>
+                Title:<br> 
+                <a href="{{ url_for('show_book', index=selected_book)}}">{{book.title}}</a>
+                <br>
+                <br>
+                Author: <br>
+                {{book.author}}
+                <br>
+                <br>
+                Genre: <br>
+                {{book.genre}}
+                <br>
+                <br>
+                <form action="/library/delete/{{ book.title }}" method="POST">
+                    <input id="remove-button" type="submit" value="Remove">
+                </form>
+            </p>
+        </div>
+    {% endfor %}
+
+        <form action="/library" method="POST">
+            <label for="title">Title: </label>
+            <input type="text" name="title" id="title">
+            <br>
+            <label for="author">Author: </label>
+            <input type="text" name="author" id="author">
+            <br>
+            <label for="genre">Genre: </label>
+            <input type="text" name="genre" id="genre">
+            <br>
+            <input type="submit" value="Add Book">
+        </form>
+{% endblock %}
