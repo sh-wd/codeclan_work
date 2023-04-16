@@ -4,6 +4,9 @@ from models.transaction import Transaction
 from models.merchant import Merchant
 from models.tag import Tag
 
+from repositories import merchant_repository
+from repositories import tag_repository
+
 def get_merchants(transaction):
     merchants = []
     transaction_id = transaction.id
@@ -32,9 +35,9 @@ def get_tags(transaction):
 
     return tags
 
-def save(transaction):
-    sql = "INSERT INTO transactions (cost) VALUES (%s) RETURNING *"
-    values = [transaction.cost]
+def save(transaction, merchant, tag):
+    sql = "INSERT INTO transactions (cost, merchant_name, tag_name) VALUES (%s, %s, %s) RETURNING *"
+    values = [transaction.cost, merchant.name, tag.name]
     results = run_sql(sql, values)
     id = results[0]['id']
     transaction.id = id
@@ -47,7 +50,9 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        transaction = Transaction(row['cost'], row['id'] )
+        merchant = merchant_repository.select(results['transaction_id'])
+        tag = tag_repository.select(results['transaction_id'])
+        transaction = Transaction(row['cost'], merchant, tag, row['id'] )
         transactions.append(transaction)
     return transactions 
 
