@@ -36,8 +36,8 @@ def get_tags(transaction):
     return tags
 
 def save(transaction):
-    sql = "INSERT INTO transactions (cost, merchant_id, tag_id) VALUES (%s, %s, %s) RETURNING *"
-    values = [transaction.cost, transaction.merchant.id, transaction.tag.id]
+    sql = "INSERT INTO transactions (cost) VALUES (%s) RETURNING *"
+    values = [transaction.cost]
     results = run_sql(sql, values)
     id = results[0]['id']
     transaction.id = id
@@ -50,9 +50,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        merchant = merchant_repository.select(row['transaction_id'])
-        tag = tag_repository.select(row['transaction_id'])
-        transaction = Transaction(row['cost'], merchant, tag, row['id'] )
+        transaction = Transaction(row['cost'], row['id'] )
         transactions.append(transaction)
     return transactions 
 
@@ -64,9 +62,7 @@ def select(id):
 
     if results:
         result = results[0]
-        merchant = merchant_repository.select(result['transaction_id'])
-        tag = tag_repository.select(result['transaction_id'])
-        transaction = Transaction(result['cost'], merchant, tag, result['id'] )
+        transaction = Transaction(result['cost'], result['id'] )
         return transaction
     
 def delete_all():
@@ -79,6 +75,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(transaction):
-    sql = "UPDATE transactions SET (cost, merchant_id, tag_id) = (%s, %s, %s) WHERE id = %s"
-    values = [transaction.cost, transaction.merchant.id, transaction.tag.id ,transaction.id]
+    sql = "UPDATE transactions SET cost = %s WHERE id = %s"
+    values = [transaction.cost, transaction.id]
     run_sql(sql, values)
