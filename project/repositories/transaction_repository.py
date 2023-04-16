@@ -50,8 +50,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        merchant = merchant_repository.select(results['transaction_id'])
-        tag = tag_repository.select(results['transaction_id'])
+        merchant = merchant_repository.select(row['transaction_id'])
+        tag = tag_repository.select(row['transaction_id'])
         transaction = Transaction(row['cost'], merchant, tag, row['id'] )
         transactions.append(transaction)
     return transactions 
@@ -64,7 +64,9 @@ def select(id):
 
     if results:
         result = results[0]
-        transaction = Transaction(result['cost'], result['id'])
+        merchant = merchant_repository.select(result['transaction_id'])
+        tag = tag_repository.select(result['transaction_id'])
+        transaction = Transaction(result['cost'], merchant, tag, result['id'] )
         return transaction
     
 def delete_all():
@@ -77,6 +79,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(transaction):
-    sql = "UPDATE transactions SET cost = %s WHERE id = %s"
-    values = [transaction.cost, transaction.id]
+    sql = "UPDATE transactions SET (cost, merchant_id, tag_id) = (%s, %s, %s) WHERE id = %s"
+    values = [transaction.cost, transaction.merchant.id, transaction.tag.id ,transaction.id]
     run_sql(sql, values)
