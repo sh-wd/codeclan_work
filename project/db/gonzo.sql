@@ -10,7 +10,9 @@ CREATE TABLE users (
 
 CREATE TABLE transactions (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    cost INT,
+    merchant_id INT NOT NULL REFERENCES merchants(id),
+    tag_id INT NOT NULL REFERENCES tags(id)
     user_id INT NOT NULL REFERENCES users(id)
 )
 
