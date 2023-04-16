@@ -2,6 +2,14 @@ from db.run_sql import run_sql
 
 from models.transaction import Transaction
 
+def save(user):
+    sql = "INSERT INTO users (name) VALUES (%s) RETURNING *"
+    values = user.name
+    results = run_sql(sql, values)
+    id = results[0]['id']
+    user.id = id
+    return user
+
 def get_transactions(user):
     transactions = []
     user_id = user.id
@@ -15,3 +23,4 @@ def get_transactions(user):
         transactions.append(transaction)
 
     return transactions
+
