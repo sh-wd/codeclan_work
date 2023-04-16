@@ -35,9 +35,7 @@ def get_transactions(user):
     results = run_sql(sql, values)
 
     for row in results:
-        merchant = merchant_repository.select(row['transaction_id'])
-        tag = tag_repository.select(row['transaction_id'])
-        transaction = Transaction(row['cost'], merchant, tag, row['id'])
+        transaction = Transaction(row['cost'], row['id'])
         transactions.append(transaction)
 
     return transactions
