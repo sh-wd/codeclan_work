@@ -3,11 +3,11 @@ from db.run_sql import run_sql
 from models.user import User
 from models.transaction import Transaction
 
-from repositories import merchant_repository, tag_repository
+from repositories import merchant_repository, tag_repository, transaction_repository
 
 def save(user):
-    sql = "INSERT INTO users (name) VALUES (%s) RETURNING *"
-    values = [user.name]
+    sql = "INSERT INTO users (name, transaction_id) VALUES (%s, %s) RETURNING *"
+    values = [user.name, user.transaction.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     user.id = id
@@ -20,7 +20,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        user = User(row['name'], row['id'] )
+        transaction = transaction_repository.select[row('transaction_id')]
+        user = User(row['name'], transaction, row['id'] )
         users.append(user)
     return users 
 
