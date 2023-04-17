@@ -36,8 +36,8 @@ def get_tags(transaction):
     return tags
 
 def save(transaction):
-    sql = "INSERT INTO transactions (cost) VALUES (%s) RETURNING *"
-    values = [transaction.cost]
+    sql = "INSERT INTO transactions (cost, user_id) VALUES (%s, %s) RETURNING *"
+    values = [transaction.cost, transaction.user.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     transaction.id = id
