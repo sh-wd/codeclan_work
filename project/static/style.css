@@ -1,19 +1,23 @@
 html, body {
     margin: 0;
+    width: 100%;
+    height: 100vh;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: "roboto", Helvetica, sans-serif;
 }
 
 #homepage-title {
     font-family: Righteous;
-    font-size: 128px;
+    font-size: 72px;
     color: cornflowerblue;
 }
 
 #homepage-logo {
-    height: 128px;
+    height: 72px;
 }
 
 #homepage-container {
@@ -55,6 +59,5 @@ body {
 }
 
 .nav-bar > ul {
-    
-    display: flex;
+    float: right;
 }

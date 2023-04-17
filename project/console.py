@@ -3,10 +3,7 @@ from models.transaction import Transaction
 from models.tag import Tag
 from models.merchant import Merchant
 
-from repositories import user_repository
-from repositories import transaction_repository
-from repositories import tag_repository
-from repositories import merchant_repository
+from repositories import user_repository, transaction_repository, tag_repository, merchant_repository
 
 tag_repository.delete_all()
 merchant_repository.delete_all()
