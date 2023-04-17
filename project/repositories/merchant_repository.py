@@ -17,8 +17,8 @@ def select_all():
     return merchants 
 
 def save(merchant):
-    sql = "INSERT INTO merchants (name, transaction_id) VALUES (%s, %s) RETURNING *"
-    values = [merchant.name, merchant.transaction.id]
+    sql = "INSERT INTO merchants (name) VALUES (%s) RETURNING *"
+    values = [merchant.name]
     results = run_sql(sql, values)
     id = results[0]['id']
     merchant.id = id

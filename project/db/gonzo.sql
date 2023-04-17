@@ -10,18 +10,19 @@ CREATE TABLE users (
 
 CREATE TABLE tags (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    name VARCHAR(255)
 );
 
 CREATE TABLE merchants (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    name VARCHAR(255)
 );
+
 CREATE TABLE transactions (
     id SERIAL PRIMARY KEY,
     cost INT,    
-    user_id INT NOT NULL REFERENCES users(id)
-    merchant_id INT NOT NULL REFERENCES merchant(id)
+    user_id INT NOT NULL REFERENCES users(id),
+    merchant_id INT NOT NULL REFERENCES merchants(id),
     tag_id INT NOT NULL REFERENCES tags(id)
 );
 
