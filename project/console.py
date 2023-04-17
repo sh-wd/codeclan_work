@@ -1,16 +1,12 @@
-from models.user import User
 from models.transaction import Transaction
 from models.tag import Tag
 from models.merchant import Merchant
 
-from repositories import user_repository, transaction_repository, tag_repository, merchant_repository
+from repositories import transaction_repository, tag_repository, merchant_repository
 
 tag_repository.delete_all()
 merchant_repository.delete_all()
 transaction_repository.delete_all()
-
-user_1 = User("Kermit the Frog")
-user_repository.save(user_1)
 
 
 merchant_1 = Merchant("Miss Piggy iPlayer")
@@ -37,14 +33,14 @@ tag_repository.save(tag_3)
 
 
 
-transaction_1 = Transaction(13.99, user_1, merchant_1, tag_1)
+transaction_1 = Transaction(13.99, merchant_1, tag_1)
 transaction_repository.save(transaction_1)
 
-transaction_2 = Transaction(22.99, user_1, merchant_2, tag_2)
+transaction_2 = Transaction(22.99, merchant_2, tag_2)
 transaction_repository.save(transaction_2)
 
-transaction_3 = Transaction(500.00, user_1, merchant_3, tag_3)
+transaction_3 = Transaction(500.00, merchant_3, tag_3)
 transaction_repository.save(transaction_3)
 
-transaction_4 = Transaction(995.00, user_1, merchant_4, tag_3)
+transaction_4 = Transaction(995.00, merchant_4, tag_3)
 transaction_repository.save(transaction_4)
