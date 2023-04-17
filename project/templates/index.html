@@ -1,1 +1,22 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Sen:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{  url_for('static', filename='style.css')}}">
+    <title>Gonzo</title>
+</head>
+<body>
+    <div id="homepage-container">
+        <img id="homepage-logo" src="../static/img/gonzo_logo.jpeg" alt="gonzo-logo">
+        <h1 id="homepage-title">Gonzo</h1>
+    </div>
+    <div id="log-in-button-container">
+        <button id="log-in-button">Log in</button>
+    </div>
+</body>
+</html>
+

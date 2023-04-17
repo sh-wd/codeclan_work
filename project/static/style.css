@@ -3,11 +3,42 @@ html, body {
 }
 
 body {
-    font-family:  "roboto", helvetica, sans-serif;
-    display: grid;
-    grid-template-areas: "header header header"
-                         "user-profile balance links"
-                         "footer footer footer";
+    font-family: "roboto", Helvetica, sans-serif;
+}
+
+#homepage-title {
+    font-family: Righteous;
+    font-size: 128px;
+    color: cornflowerblue;
+}
+
+#homepage-logo {
+    height: 128px;
+}
+
+#homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#log-in-button-container {
+    margin: auto;
+    width: 100px;
+}
+
+#log-in-button {
+    width: 100%;
+    height: 30px;
+    background-color: lightcoral;
+    color: white;
+    border-style: none;
+    box-shadow: 10px, 10px, black;
+    border-radius: 10px;
+}
+
+#log-in-button:hover {
+    cursor: pointer;
 }
 
 .logo {

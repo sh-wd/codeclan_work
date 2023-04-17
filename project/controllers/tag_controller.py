@@ -8,5 +8,5 @@ tags_blueprint = Blueprint("tags", __name__)
 
 @tags_blueprint.route("/tags")
 def tags():
-    tags = tags.select_all()
+    tags = tag_repository.select_all()
     return render_template("tags/index.html", tags=tags)
