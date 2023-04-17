@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
 
-from repositories import transaction_repository
 from models.merchant import Merchant
   
 def select_all():  
@@ -10,9 +9,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        transaction_id = row['transaction_id']
-        transaction = transaction_repository.select(transaction_id)
-        merchant = Merchant(row['name'], transaction, row['id'] )
+        merchant = Merchant(row['name'], row['id'] )
         merchants.append(merchant)
     return merchants 
 
@@ -32,9 +29,7 @@ def select(id):
 
     if results:
         result = results[0]
-        transaction_id = result['transaction_id']
-        transaction = transaction_repository.select(transaction_id)
-        merchant = Merchant(result['name'], transaction, result['id'])
+        merchant = Merchant(result['name'], result['id'])
         return merchant
     
 def delete_all():
@@ -47,6 +42,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(merchant):
-    sql = "UPDATE merchants SET (name, transaction_id) = (%s, %s) WHERE id = %s"
-    values = [merchant.name, merchant.transaction.id, merchant.id]
+    sql = "UPDATE merchants SET name = %s WHERE id = %s"
+    values = [merchant.name, merchant.id]
     run_sql(sql, values)

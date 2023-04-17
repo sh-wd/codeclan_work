@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
 
-from repositories import transaction_repository
 from models.tag import Tag
   
 def select_all():  
@@ -10,15 +9,13 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        transaction_id = row['transaction_id']
-        transaction = transaction_repository.select(transaction_id)
-        tag = Tag(row['name'], transaction, row['id'] )
+        tag = Tag(row['name'], row['id'] )
         tags.append(tag)
     return tags 
 
 def save(tag):
-    sql = "INSERT INTO tags (name, transaction_id) VALUES (%s, %s) RETURNING *"
-    values = [tag.name, tag.transaction.id]
+    sql = "INSERT INTO tags (name) VALUES (%s) RETURNING *"
+    values = [tag.name]
     results = run_sql(sql, values)
     id = results[0]['id']
     tag.id = id
@@ -32,9 +29,7 @@ def select(id):
 
     if results:
         result = results[0]
-        transaction_id = result['transaction_id']
-        transaction = transaction_repository.select(transaction_id)
-        tag = Tag(result['name'], transaction, result['id'])
+        tag = Tag(result['name'], result['id'])
         return tag
     
 def delete_all():
@@ -47,6 +42,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(tag):
-    sql = "UPDATE tags SET (name, transaction_id) = (%s, %s) WHERE id = %s"
-    values = [tag.name, tag.transaction.id, tag.id]
+    sql = "UPDATE tags SET name = %s WHERE id = %s"
+    values = [tag.name, tag.id]
     run_sql(sql, values)
