@@ -2,9 +2,6 @@ from db.run_sql import run_sql
 
 from models.user import User
 from models.transaction import Transaction
-from repositories import transaction_repository
-from repositories import merchant_repository
-from repositories import tag_repository
 
 def save(user):
     sql = "INSERT INTO users (name) VALUES (%s) RETURNING *"
@@ -21,8 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        transaction = transaction_repository.select(row['user_id'])
-        user = User(row['name'], transaction, row['id'] )
+        user = User(row['name'], row['id'] )
         users.append(user)
     return users 
 

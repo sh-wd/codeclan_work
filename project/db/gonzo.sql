@@ -17,13 +17,13 @@ CREATE TABLE transactions (
 CREATE TABLE tags (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    transaction_id INT NOT NULL REFERENCES tags(id)
+    transaction_id INT NOT NULL REFERENCES transactions(id)
 );
 
 CREATE TABLE merchants (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    transaction_id INT NOT NULL REFERENCES merchants(id)
+    transaction_id INT NOT NULL REFERENCES transactions(id)
 );
 
 

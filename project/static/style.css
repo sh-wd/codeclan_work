@@ -1,0 +1,15 @@
+html, body {
+    margin: 0;
+}
+
+body {
+    font-family:  "roboto", helvetica, sans-serif;
+    display: grid;
+    grid-template-areas: "header header header"
+                         "user-profile balance links"
+                         "footer footer footer";
+}
+
+.logo {
+    font-family: Righteous;
+}
