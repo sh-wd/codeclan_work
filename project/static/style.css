@@ -41,6 +41,20 @@ body {
     cursor: pointer;
 }
 
-.logo {
+.nav-bar {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 10px;
     font-family: Righteous;
+    font-size: 20px;
+}
+
+.nav-bar > img {
+    height: 50%;
+}
+
+.nav-bar > ul {
+    
+    display: flex;
 }

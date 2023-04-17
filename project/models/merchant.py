@@ -1,5 +1,4 @@
 class Merchant:
-    def __init__(self, name, transaction, id = None):
+    def __init__(self, name, id = None):
         self.name = name
-        self.transaction = transaction
         self.id = id
