@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 
 from repositories import merchant_repository
+from models.merchant import Merchant
 
 merchants_blueprint = Blueprint("merchants", __name__)
 
@@ -44,7 +45,7 @@ def edit_merchant(id):
 @merchants_blueprint.route("/merchants/<id>", methods=['POST'])
 def update_merchant(id):
     name = request.form['name']
-    merchant = merchant(name, id)
+    merchant = Merchant(name, id)
     merchant_repository.update(merchant)
     return redirect('/merchants')
 

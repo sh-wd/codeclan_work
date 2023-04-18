@@ -2,10 +2,6 @@
 
 {% block content %}
 <form action="/transactions/{{transaction.id}}" method="post">
-    <div>
-      <label for="transaction">Transaction:</label>
-      <input type="text" id="transaction" name="transaction" value="{{transaction.id}}" required>
-    </div>
   
     <div>
       <label for="merchant">Merchant:</label>
@@ -15,18 +11,6 @@
     <div>
       <label for="tag">Tag:</label>
       <input type="text" id="tag" name="tag" value="{{transaction.tag.name}}" required autofocus>
-    </div>
-  
-    <div>
-      <label for="author">Author:</label>
-      <select id="author" name="author_id">
-        {% for author in all_authors %}
-          <option value="{{ author.id }}"
-            {% if transaction.author.id == author.id %} selected="selected"{% endif %}>
-            {{ author.full_name() }}
-          </option>
-        {% endfor %}
-      </select>
     </div>
   
     <button type="submit">Update transaction</button>

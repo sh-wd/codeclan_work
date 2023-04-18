@@ -20,7 +20,7 @@ def new_tag():
 @tags_blueprint.route("/tags",  methods=['POST'])
 def create_tag():
     name = request.form['name']
-    tag = tag(name)
+    tag = Tag(name)
     tag_repository.save(tag)
     return redirect('/tags')
 

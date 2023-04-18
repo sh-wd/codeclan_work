@@ -4,9 +4,9 @@ from models.merchant import Merchant
 
 from repositories import transaction_repository, tag_repository, merchant_repository
 
+transaction_repository.delete_all()
 tag_repository.delete_all()
 merchant_repository.delete_all()
-transaction_repository.delete_all()
 
 
 merchant_1 = Merchant("Miss Piggy iPlayer")

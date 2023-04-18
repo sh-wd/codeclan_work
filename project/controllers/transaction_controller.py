@@ -20,7 +20,9 @@ def new_transaction():
 @transactions_blueprint.route("/transactions",  methods=['POST'])
 def create_transaction():
     cost = request.form['cost']
-    transaction = transaction(cost)
+    merchant = request.form['merchant']
+    tag = request.form['tag']
+    transaction = Transaction(cost, merchant, tag)
     transaction_repository.save(transaction)
     return redirect('/transactions')
 
