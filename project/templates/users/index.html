@@ -1,1 +1,15 @@
 {% extends 'base.html' %}
+
+{% block content %}
+    
+    <div class="profile-container">
+        <img class="user-image" src="../../static/img/Kermit.jpg" alt="user profile picture">
+        <h2>welcome Kermit</h2>
+    </div>
+    <ul class="category-container">
+        <li class="category-box"><a href="/transactions">transactions</a></li>
+        <li class="category-box"><a href="/merchants">merchants</a></li>
+        <li class="category-box"><a href="/tags">tags</a></li>
+    </ul>
+
+{% endblock content %}

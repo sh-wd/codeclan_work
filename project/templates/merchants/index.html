@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
-    {% block content %}
+{% block content %}
+
+    <a href="{{ url_for('merchants.new_merchant') }}">+ Merchant</a>
+
     {% for merchant in merchants %}
     <div>
         <a href="/merchants/{{merchant.id}}">{{merchant.name}}</a>
@@ -10,8 +13,5 @@
         </form>
     </div>
     {% endfor %}
-    <br>
-    <a href="{{ url_for('merchants.new_merchant') }}">New Merchant</a>
 
-
-    {% endblock %}
+{% endblock %}

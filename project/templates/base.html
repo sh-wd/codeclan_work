@@ -6,23 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Sen:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{  url_for('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap" rel="stylesheet">    <link rel="stylesheet" href="{{  url_for('static', filename='style.css')}}">
     <title>Gonzo</title>
 </head>
 <body>
-    <div class="nav-bar">
-        <a href="/users">
-            <img src="../static/img/gonzo_logo.jpeg" alt="gonzo logo">
+    <header class="nav-bar">
+        <a class="logo-container" href="/users">
+            <img src="../static/img/gonzo_logo_white.svg" alt="gonzo logo">
             <h1>Gonzo</h1>
         </a>
         <ul>
-            <li><a href="/transactions">Transactions</a></li>
-            <li><a href="/merchants">Merchants</a></li>
-            <li><a href="/tags">Tags</a></li>
+            <li><a href="/transactions">transactions</a></li>
+            <li><a href="/merchants">merchants</a></li>
+            <li><a href="/tags">tags</a></li>
         </ul>
-    </div>
-{% block content %}
-{% endblock content %}
+    </header>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+    </footer>
 </body>
 </html>
