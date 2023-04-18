@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-
 {% block content %}    
     {% for transaction in transactions %}
         <p>
             <a href="/transactions/{{transaction.id}}">Transaction {{transaction.id}}</a>
+            {{transaction.cost}}
             {{transaction.merchant.name}}
             {{transaction.tag.name}}
         </p>
@@ -15,6 +15,6 @@
         </div>
     {% endfor %}
     <br>
-    <a href="{{ url_for('tags.new_tag') }}">New Tag</a>
+    <a href="{{ url_for('transactions.new_transaction') }}">New Transaction</a>
 
 {% endblock content %}
