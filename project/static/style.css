@@ -54,8 +54,8 @@ body {
     font-size: 20px;
 }
 
-.nav-bar > img {
-    height: 50%;
+.nav-bar > a > img {
+    height: 100px;
 }
 
 .nav-bar > ul {

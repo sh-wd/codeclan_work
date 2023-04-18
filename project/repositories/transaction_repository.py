@@ -82,3 +82,8 @@ def update(transaction):
     sql = "UPDATE transactions SET (cost, merchant_id, tag_id) = (%s, %s, %s) WHERE id = %s"
     values = [transaction.cost, transaction.merchant.id, transaction.tag.id, transaction.id]
     run_sql(sql, values)
+
+def total_cost():
+    sql = "SELECT SUM(cost) FROM transactions;"
+    result = run_sql(sql)
+    return result[0][0]

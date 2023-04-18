@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.transaction import Transaction
 from repositories import transaction_repository, merchant_repository, tag_repository
-import pdb
 
 transactions_blueprint = Blueprint("transactions", __name__)
 
@@ -13,7 +12,8 @@ def users():
 @transactions_blueprint.route("/transactions")
 def transactions():
     transactions = transaction_repository.select_all()
-    return render_template("transactions/index.html", transactions=transactions)
+    total_cost = transaction_repository.total_cost()
+    return render_template("transactions/index.html", transactions=transactions, total_cost=total_cost)
 
 @transactions_blueprint.route("/transactions/new", methods=['GET'])
 def new_transaction():
