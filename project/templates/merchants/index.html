@@ -4,13 +4,15 @@
     <a href="{{ url_for('merchants.new_merchant') }}">+ Merchant</a>
 
     {% for merchant in merchants %}
-    <div>
-        <a href="/merchants/{{merchant.id}}">{{merchant.name}}</a>
-    </div>
-    <div>
-        <form class="delete-form" action="/merchants/{{merchant.id}}/delete" method="POST">
-            <button>Delete Merchant</button>
-        </form>
+    <div class="category-container">
+        <div>    
+            <a href="/merchants/{{merchant.id}}">{{merchant.name}}</a>
+        </div>
+        <div>
+            <form class="delete-form" action="/merchants/{{merchant.id}}/delete" method="POST">
+                <button>Delete</button>
+            </form>
+        </div>
     </div>
     {% endfor %}
 

@@ -1,22 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}    
-<p>Total Spend: £{{ total_cost }}</p>
-<br>
-<a href="{{ url_for('transactions.new_transaction') }}"><button>+ transaction</button></a>
-    {% for transaction in transactions %}
-        <a href="/transactions/{{transaction.id}}">
-            <div class="transaction-box">
-                <p class="cost">£{{transaction.cost}}</p>
-                <p>{{transaction.merchant.name}}</p>
-                <p>{{transaction.tag.name}}</p>
+<div class="category-container">
+    <p class="category-box">Total Spend: £{{ total_cost }}</p>
+    <br>
+    <a href="{{ url_for('transactions.new_transaction') }}"><button>+ transaction</button></a>
+        {% for transaction in transactions %}
+            <a href="/transactions/{{transaction.id}}">
+                <div class="transaction-box">
+                    <div class="cost-container">
+                        <p>£{{transaction.cost}}</p>
+                    </div>
+                    <p>{{transaction.merchant.name}}</p>
+                    <p>{{transaction.tag.name}}</p>
+                </div>
+            </a>
+            <div>
+                <form action="/transactions/{{transaction.id}}/delete" method="POST">
+                    <button>Delete Transaction</button>
+                </form>
             </div>
-        </a>
-        <div>
-            <form action="/transactions/{{transaction.id}}/delete" method="POST">
-                <button>Delete Transaction</button>
-            </form>
-        </div>
-    {% endfor %}
-
+        {% endfor %}
+</div>
 {% endblock content %}

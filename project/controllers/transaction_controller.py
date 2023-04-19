@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.transaction import Transaction
 from repositories import transaction_repository, merchant_repository, tag_repository
+import pdb
 
 transactions_blueprint = Blueprint("transactions", __name__)
 
@@ -50,16 +51,20 @@ def show_transaction(id):
 # GET '/transactions/<id>/edit'
 @transactions_blueprint.route("/transactions/<id>/edit", methods=['GET'])
 def edit_transaction(id):
+    merchants = merchant_repository.select_all()
+    tags = tag_repository.select_all()
     transaction = transaction_repository.select(id)
-    return render_template('transactions/edit.html', transaction=transaction)
+    return render_template('transactions/edit.html', transaction=transaction, merchants=merchants, tags=tags)
 
 # UPDATE
 # PUT '/transactions/<id>'
-@transactions_blueprint.route("/transactions/<id>", methods=['POST'])
+@transactions_blueprint.route("/transactions/<int:id>", methods=['POST'])
 def update_transaction(id):
     cost = request.form['cost']
-    merchant = request.form['merchant']
-    tag = request.form['tag']
+    merchant_id = request.form['merchant']
+    merchant = merchant_repository.select(merchant_id)
+    tag_id = request.form['tag']
+    tag = tag_repository.select(tag_id)
     transaction = Transaction(cost, merchant, tag, id)
     transaction_repository.update(transaction)
     return redirect('/transactions')

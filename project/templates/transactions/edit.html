@@ -1,20 +1,35 @@
-<!-- {% extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 <form action="/transactions/{{transaction.id}}" method="post">
+
+  <div>
+    <label for="cost">Cost:</label>
+    <input type="number" min="1" id="cost" name="cost" value="{{transaction.cost}}" required autofocus>
+  </div>
   
     <div>
-      <label for="merchant">Merchant:</label>
-      <input type="text" id="merchant" name="merchant" value="{{transaction.merchant.name}}" required autofocus>
-    </div>
+      <label for="merchants">merchant: </label>
+
+      <select name="merchant" id="merchants">
+        {% for merchant in merchants %}
+            <option value="{{ merchant.id }}">{{ merchant.name }}</option>
+        {% endfor %}
+      </select>
+      </div>
   
     <div>
-      <label for="tag">Tag:</label>
-      <input type="text" id="tag" name="tag" value="{{transaction.tag.name}}" required autofocus>
+      <label for="tags">tag: </label>
+
+      <select name="tag" id="tags">
+        {% for tag in tags %}
+            <option value="{{ tag.id }}">{{ tag.name }}</option>
+        {% endfor %}
+    </select>
     </div>
   
     <button type="submit">Update transaction</button>
   
   </form>
     
-{% endblock content %} -->
+{% endblock content %}

@@ -6,6 +6,7 @@ from models.tag import Tag
 
 from repositories import merchant_repository
 from repositories import tag_repository
+import pdb
 
 def get_merchants(transaction):
     merchants = []

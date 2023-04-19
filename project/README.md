@@ -1,3 +1,18 @@
+### github repo
+
+https://github.com/sh-wd/codeclan_work/tree/main/project
+
+### To run the app
+
+In command terminal in project folder run the commands:
+
+dropdb gonzo
+createdb gonzo
+psql -d gonzo -f gonzo.sql
+python3 console.py
+flask run
+
+### The Brief
 ### Spending Tracker
 
 Build an app that allows a user to track their spending.
