@@ -18,7 +18,10 @@ body {
 a {
     text-decoration: none;
     font-family: Roboto, Helvetica, sans-serif;
-    color: white;
+}
+
+p {
+    line-height: 0;
 }
 
 /*  */
@@ -83,16 +86,21 @@ a:hover {
     margin-bottom: 40px;
 }
 
+.nav-links {
+    color: white;
+}
+
 .logo-container {
     display: flex;
+    align-items: center;
 }
 
 .logo-container > a > h1 {
     margin: 0;
 }
 
-.logo-container img {
-    height: 100px;
+.logo-container > img {
+    height: 50px;
 }
 
 .nav-bar > ul {
@@ -113,16 +121,15 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:darkseagreen;
     width: 240px;
     height: 240px;
-    box-shadow: 10px 10px 30px darkseagreen;
+    box-shadow: 10px 10px 30px lightgray;
 }
 
 .profile-container > h2 {
     margin-top: 0;
     margin-bottom: 20px;
-    color: white;
+    color: lightcoral;
 }
 
 .user-image {
@@ -143,16 +150,35 @@ ul {
     margin: 10px;
     height: 50px;
     width: 250px;
-    box-shadow: 10px 10px 15px gray;
+    box-shadow: 10px 10px 15px lightgrey;
     text-align: center;
+    color: cornflowerblue;
+    font-size: 24px;
 }
 
-.category-box > a {
-    color: gray;
-    font-size: 24px;
+.category-box:hover {
+    box-shadow: 10px 10px 15px grey;
 }
 
 footer {
     background-color: lightcoral;
     height: 100px;
+}
+
+/*  */
+/* transaction page styles */
+/*  */
+
+.transaction-box {
+    margin: 10px;
+    height: 50px;
+    width: 250px;
+    box-shadow: 10px 10px 15px lightgrey;
+    text-align: center;
+    color: cornflowerblue;
+    font-size: 16px;
+}
+
+.transaction-box:hover {
+    box-shadow: 10px 10px 15px grey;
 }
