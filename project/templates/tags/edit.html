@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="category-container">
+  <form action="/tags/{{tag.id}}" method="post">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="{{tag.name}}" required>
+    </div>
 
-<form action="/tags/{{tag.id}}" method="post">
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="{{tag.name}}" required>
-  </div>
+    <button type="submit">Update Tag</button>
 
-  <button type="submit">Update Tag</button>
-
-</form>
+  </form>
+</div>
 
 {% endblock %}

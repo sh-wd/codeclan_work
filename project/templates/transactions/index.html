@@ -2,7 +2,7 @@
 
 {% block content %}    
 <div class="category-container">
-    <p class="category-box">Total Spend: £{{ total_cost }}</p>
+    <p class="category-box" id="spend-box">Total Spend: £{{ total_cost }}</p>
     <br>
     <a href="{{ url_for('transactions.new_transaction') }}"><button>+ transaction</button></a>
         {% for transaction in transactions %}

@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/merchants" method="post">
+<div class="category-container">
+  <form action="/merchants" method="post">
 
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="name" required autofocus>
-  </div>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="name" required autofocus>
+    </div>
 
-  <button type="submit">Add Merchant</button>
+    <button type="submit">Add Merchant</button>
 
-</form>
+  </form>
+</div>
 
 {% endblock %}

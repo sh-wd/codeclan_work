@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/tags" method="post">
+<div class="category-container">
+  <form action="/tags" method="post">
 
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="name" required autofocus>
-  </div>
+    <div>
+      <label for="name">name:</label>
+      <input type="text" id="name" name="name" placeholder="name" required autofocus>
+    </div>
 
-  <button type="submit">Add Tag</button>
+    <button type="submit">+ tag</button>
 
-</form>
-
+  </form>
+</div>
 {% endblock %}

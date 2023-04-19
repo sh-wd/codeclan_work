@@ -1,31 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="category-container">
+    <form action="/transactions" method="post">
 
-<form action="/transactions" method="post">
+    <div>
+        <label for="cost">cost:</label>
+        <input type="number" min="1" id="cost" name="cost" placeholder="cost" required autofocus>
+        <br>
+        <label for="merchants">merchant:</label>
+        <select name="merchants" id="merchants">
+            {% for merchant in merchants %}
+                <option value="{{ merchant.id }}">{{ merchant.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="tags">tag:</label>
+            
+        <select name="tags" id="tags">
+            {% for tag in tags %}
+                <option value="{{ tag.id }}">{{ tag.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
 
-<div>
-    <label for="cost">Cost:</label>
-    <input type="number" min="1" id="cost" name="cost" placeholder="cost" required autofocus>
-    <label for="merchants">Choose a Merchant:</label>
-    
-    <select name="merchants" id="merchants">
-        {% for merchant in merchants %}
-            <option value="{{ merchant.id }}">{{ merchant.name }}</option>
-        {% endfor %}
-    </select>
+    <button type="submit">+ transaction</button>
+
+    </form>
 </div>
-<div>
-    <label for="tags">Choose a Tag:</label>
-        
-    <select name="tags" id="tags">
-        {% for tag in tags %}
-            <option value="{{ tag.id }}">{{ tag.name }}</option>
-        {% endfor %}
-    </select>
-</div>
-
-  <button type="submit">Add Transaction</button>
-
-</form>
 
 {% endblock %}

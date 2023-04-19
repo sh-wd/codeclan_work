@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div>
-    <p>{{transaction.id}}</p>
-    <hr>
-    <p>{{transaction.merchant.name}}</p>
-    <p>{{transaction.tag.name}}</p>
-    <p><a href="/transactions/{{transaction.id}}/edit">Edit</a></p>
+  <div class="category-container">
+    <div class="transaction-box">
+      <p>£{{transaction.cost}}</p>
+      <p>{{transaction.merchant.name}}</p>
+      <p>{{transaction.tag.name}}</p>
+    </div>
+    <p><a href="/transactions/{{transaction.id}}/edit"><button>Edit</button></a></p>
   </div>
 
 {% endblock %}

@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="/transactions/{{transaction.id}}" method="post">
+<div class="category-container">
+  <form action="/transactions/{{transaction.id}}" method="post">
 
   <div>
     <label for="cost">Cost:</label>
@@ -31,5 +32,6 @@
     <button type="submit">Update transaction</button>
   
   </form>
+</div>
     
 {% endblock content %}

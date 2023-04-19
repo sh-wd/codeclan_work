@@ -1,18 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <a href="{{ url_for('tags.new_tag') }}">+ Tag</a>
+<div class="category-container">
+    <a href="{{ url_for('tags.new_tag') }}"><button>+ Tag</button></a>
 
     {% for tag in tags %}
-    <div>
-        <a href="/tags/{{tag.id}}">{{tag.name}}</a>
-    </div>
-    <div>
-        <form class="delete-form" action="/tags/{{tag.id}}/delete" method="POST">
-            <button class="trash-button"></i>Delete Tag</button>
-        </form>
+    <div class="category-container">
+        <a href="/tags/{{tag.id}}">
+        <div class="transaction-box">
+            {{tag.name}}
+        </div>
+        </a>
+        <div>
+            <form class="delete-form" action="/tags/{{tag.id}}/delete" method="POST">
+                <button class="trash-button"></i>Delete Tag</button>
+            </form>
+        </div>
     </div>
     {% endfor %}
-
+</div>
 {% endblock %}
