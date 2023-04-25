@@ -8,7 +8,7 @@ def select_all():
 
     sql = "SELECT * FROM tasks"
     results = run_sql(sql)
-
+    
     for row in results:
         user_id = row['user_id']
         user = user_repository.select(user_id)
