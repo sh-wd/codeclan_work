@@ -22,7 +22,7 @@ Park.prototype.removeDinosaurFromPark = function(dinosaur){
 Park.prototype.findDinosaursBySpecies = function(species){
     let speciesList = []
     for(let dinosaur of this.dinosaurs){
-        if(species = dinosaur.species){
+        if(species == dinosaur.species){
             speciesList.push(dinosaur);
         }
     }
@@ -51,7 +51,7 @@ Park.prototype.calculateYearlyRevenue = function(price){
     for(let dinosaur of this.dinosaurs){
         dailyVisitors += dinosaur.guestsAttractedPerDay;
     };
-    yearlyRevenue = dailyVisitors * 365 * price;
+    return yearlyRevenue = dailyVisitors * 365 * price;
 }
 
 module.exports = Park;
