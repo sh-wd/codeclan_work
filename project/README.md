@@ -8,7 +8,7 @@ In command terminal in project folder run the commands:
 
 dropdb gonzo
 createdb gonzo
-psql -d gonzo -f gonzo.sql
+psql -d gonzo -f db/gonzo.sql
 python3 console.py
 flask run
 
