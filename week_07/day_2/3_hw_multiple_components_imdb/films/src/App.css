@@ -1,0 +1,28 @@
+.App {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  border: 5px solid coral;
+  background-color: yellow;
+  color: orange;
+}
+
+a {
+  text-decoration: none;
+  color: darkturquoise;
+}
+
+a:hover {
+  cursor: pointer;
+  color: blueviolet;
+}
+
+.box-title {
+  background-color: aqua;
+  margin: 0;
+}
+
+.upcoming-box {
+  border: 5px dotted greenyellow;
+  background-color: hotpink;
+}

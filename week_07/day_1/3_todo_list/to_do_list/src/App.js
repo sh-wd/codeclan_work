@@ -34,6 +34,7 @@ function App() {
     copyTasks.push({name: newTask, priority: newPriority});
     setTasks(copyTasks);
     setNewTask("");
+    setNewPriority("");
   };
 
 
@@ -46,8 +47,8 @@ function App() {
       <form onSubmit={saveNewTask}>
         <label htmlFor="new-task">Add a new task:</label>
         <input id="new-task" type="text" value={newTask} onChange={handleTaskInput}/>
-        <input id="high-priority" type="radio" name="priority" value="high" onChange={handlePriority}/>High
-        <input id="low-priority" type="radio" name="priority" value="low" onChange={handlePriority}/>Low
+        <input id="high-priority" type="radio" name="priority" value="high" onChange={handlePriority} checked={newPriority === "high"}/>High
+        <input id="low-priority" type="radio" name="priority" value="low" onChange={handlePriority} checked={newPriority === "low"}/>Low
         <input type="submit" value="Save New Task" />
       </form>
       <ul>
