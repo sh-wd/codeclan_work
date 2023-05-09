@@ -4,7 +4,7 @@ const ArticleItems = ({article}) => {
 
     return ( 
         <div className="article">
-        <a href={article["url"]}>
+        <a href={article["url"]} target="_blank">
             <li>
                 <h2>{article["title"]}</h2>
                 <img src={article["image_url"]} className="article-img" alt=""/>
