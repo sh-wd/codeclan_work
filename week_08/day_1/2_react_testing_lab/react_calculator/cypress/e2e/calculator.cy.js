@@ -82,11 +82,11 @@ describe("Calculator", () => {
     cy.get(".display").should("contain", "1e+24")
   });
 
-  it("should display infinity when divided by 0", () => {
+  it("should display cannot divide by 0 when divided by 0", () => {
     cy.get("#number5").click(); 
     cy.get("#operator-divide").click();
     cy.get("#number0").click();
     cy.get("#operator-equals").click();
-    cy.get(".display").should("contain", "Infinity")
+    cy.get(".display").should("contain", "cannot divide by 0")
   });
 });
