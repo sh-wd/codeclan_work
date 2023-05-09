@@ -5,7 +5,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -23,10 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-header > h1 {
-  font-family: Bruno Ace SC;
+  margin: 0 20px;
 }
 
 .App-link {

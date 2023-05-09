@@ -8,9 +8,7 @@ const ArticlesList = ({articles}) => {
 
     return ( 
         <>
-        <ul>
-            <li>{articleItems}</li>
-        </ul>
+        <ul className="article-container">{articleItems}</ul>
         </>
      );
 };

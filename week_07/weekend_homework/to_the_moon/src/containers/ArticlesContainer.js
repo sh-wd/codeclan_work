@@ -1,4 +1,5 @@
 import React,{ useEffect, useState } from 'react';
+import logo from '../moon.png';
 import ArticlesList from '../components/ArticlesList';
 import FilterArticles from '../components/FilterArticles';
 // import IncreaseList from '../components/IncreaseList';
@@ -28,7 +29,13 @@ const ArticlesContainer = ({sources}) => {
 
     return ( 
         <>
-        <h1>To...to...to the Moon News</h1>
+            <div className="logo-banner">
+                <img src={logo} className="App-logo" alt="logo of the moon" />
+                <div className="logo-banner-text">
+                    <h1>To...to...to the Moon News</h1>
+                    <h1 className="logo-banner-reflection">To...to...to the Moon News</h1>
+                </div>
+            </div>
         <FilterArticles handleSelectChange={handleSelectChange} sources={sources}/>
         <ArticlesList articles={articles}/>
         {/* <IncreaseList/> */}

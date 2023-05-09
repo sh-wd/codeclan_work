@@ -2,3 +2,63 @@ a {
     text-decoration: none;
 }
 
+h1 , h2 , p {
+    color: white;
+}
+
+p {
+    font-size: 14px;
+}
+
+.logo-banner {
+    display: flex;
+    align-items: center;
+}
+
+.logo-banner-text > h1 {
+    font-family: Bruno Ace SC;
+    margin: 0;
+  }
+
+.logo-banner-reflection {
+    color: transparent;
+    text-shadow: 0 0 5px white;
+    -moz-transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+
+.article-container {
+    padding: 0;
+    justify-content: center;
+}
+
+.article {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    box-shadow: 10px 10px 20px white;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    }
+
+.article-img {
+    height: 90%;
+    width: 90%;
+}
+
+@media only screen and (min-width: 720px) {
+
+    .article-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .article {
+        max-width: 350px;
+        height: auto;
+    }
+}
