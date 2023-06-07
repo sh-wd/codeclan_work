@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cdf97a07-d65e-4fe3-a4af-b4765cae12d8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../arrays/arrays/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../hashmaps/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_01/day_1/precourse_recap" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../week_01/day_1/precourse_recap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_2/shop_lab/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../week_08/day_2/shop_lab/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_2/shop_lab/src/container/ShopContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../week_08/day_2/shop_lab/src/container/ShopContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/cypress.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/cypress/fixtures/example.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/cypress/integration/titlebar.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/cypress/plugins/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/cypress/support/commands.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/cypress/support/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/src/components/Chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/src/components/Song.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/src/components/TitleBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/src/containers/ChartContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/src/registerServiceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../week_08/day_3/start_code/yarn.lock" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="2QpgDTVExX4Pqf7rMxn3Mv1n5lI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "editor.preferences.import"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdf97a07-d65e-4fe3-a4af-b4765cae12d8" name="Changes" comment="" />
+      <created>1686055836178</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686055836178</updated>
+    </task>
+    <servers />
+  </component>
+</project>
